@@ -20,6 +20,7 @@ def shop(name, suchurl, fehler):
         f = open("[YOUR PATH HERE]", "a")
         f.write(f"{name}: Not Found \n")
         f.close()
+        
     else:
         f = open("[YOUR PATH HERE]", "a")
         f.write(f"{name}: Found \n")
