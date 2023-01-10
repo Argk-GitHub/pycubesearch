@@ -14,7 +14,7 @@ print("|_|      |_|   \____| \___/ |____/ |_____||____/ |_____|/_/   \_\|_| \_\ 
 print("                                                                       made by Argk")
 anzahl = 16
 product = input("What product are you looking for?")
-f = open([YUOR PATH HERE], "a")
+f = open([YOUR PATH HERE], "a")
 f.write(f"Results for {product}:\n")
 f.close()
 counter = 0
@@ -23,12 +23,12 @@ def shop(name, ShopSearchUrl, ErrorMessage):
     fullurl = ShopSearchUrl + product
     html = urlopen(fullurl, context=ctx).read().decode("utf-8")
     if f"{ErrorMessage}" in html:
-        f = open([YUOR PATH HERE], "a")
+        f = open([YOUR PATH HERE], "a")
         f.write(f"{name}: Not Found \n")
         f.close()
         
     else:
-        f = open([YUOR PATH HERE], "a")
+        f = open([YOUR PATH HERE], "a")
         f.write(f"{name}: Found {fullurl}\n")
         f.close()
         
