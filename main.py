@@ -5,25 +5,31 @@ import ssl
 ctx = ssl.create_default_context()
 ctx.check_hostname = False
 ctx.verify_mode = ssl.CERT_NONE
+print(" ____  __   __  ____  _   _  ____   _____  ____   _____     _     ____    ____  _   _ ")
+print("|  _ \ \ \ / / / ___|| | | || __ ) | ____|/ ___| | ____|   / \   |  _ \  / ___|| | | |")
+print("| |_) | \ V / | |    | | | ||  _ \ |  _|  \___ \ |  _|    / _ \  | |_) || |    | |_| |")
+print("|  __/   | |  | |___ | |_| || |_) || |___  ___) || |___  / ___ \ |  _ < | |___ |  _  |")
+print("|_|      |_|   \____| \___/ |____/ |_____||____/ |_____|/_/   \_\|_| \_\ \____||_| |_|")
 
+print("                                                                       made by Argk")
 anzahl = 16
-nachwaswirsuchen = input("What product are you looking for?")
-f = open("[YOUR PATH HERE]", "a")
-f.write(f"Suchergebnisse für {nachwaswirsuchen}:\n")
+product = input("What product are you looking for?")
+f = open([YUOR PATH HERE], "a")
+f.write(f"Results for {product}:\n")
 f.close()
 counter = 0
-def shop(name, suchurl, fehler):
+def shop(name, ShopSearchUrl, ErrorMessage):
     global ctx
-    fullurl = suchurl + nachwaswirsuchen
+    fullurl = ShopSearchUrl + product
     html = urlopen(fullurl, context=ctx).read().decode("utf-8")
-    if f"{fehler}" in html:
-        f = open("[YOUR PATH HERE]", "a")
+    if f"{ErrorMessage}" in html:
+        f = open([YUOR PATH HERE], "a")
         f.write(f"{name}: Not Found \n")
         f.close()
         
     else:
-        f = open("[YOUR PATH HERE]", "a")
-        f.write(f"{name}: Found \n")
+        f = open([YUOR PATH HERE], "a")
+        f.write(f"{name}: Found {fullurl}\n")
         f.close()
         
 shop("euro-cubes.com", "https://euro-cubes.com/search?options%5Bprefix%5D=last&q=", "Keine Ergebnisse gefunden")
@@ -106,6 +112,4 @@ shop("cubeshop.ch", "https://cubeshop.ch/de/suche?controller=search&s=", "Entsch
 os.system("CLS")
 counter = counter + 1
 print(f"{counter} out of {anzahl} shops checked")
-
-
 
